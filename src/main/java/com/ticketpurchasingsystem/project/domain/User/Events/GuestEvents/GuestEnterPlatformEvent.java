@@ -3,14 +3,21 @@ import com.ticketpurchasingsystem.project.domain.authentication.SessionToken;;
 
 public class GuestEnterPlatformEvent extends GuestEvents {
 
-    private SessionToken sessionToken;
+    private String guestId;
+    private String sessionTokenStr;
 
-    public GuestEnterPlatformEvent(SessionToken sessionToken) {
-        this.sessionToken = sessionToken;
+    public GuestEnterPlatformEvent(String guestId, String sessionTokenStr) {
+        this.guestId = guestId;
+        this.sessionTokenStr = sessionTokenStr;
     }
 
     @Override
-    public SessionToken getSessionToken() {
-        return sessionToken;
+    public String getSessionToken() {
+        return sessionTokenStr;
     }
+
+    public String getGuestId() {
+        return guestId;
+    }
+    
 }
